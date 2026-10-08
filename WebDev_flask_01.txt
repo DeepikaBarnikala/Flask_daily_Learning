@@ -1,0 +1,144 @@
+===================
+	|   DAY1 - FLASK  |
+	===================
+
+Web Development & Flask
+=========================
+
+Web Development:
+=================
+It refers to the overall process of creating, building and maintain web applications or websitesit encompasses everything 
+from plain text web pages to complex networks, e-commerce platformand real time web applications
+
+Broadly divided into two disciplines
+	-> Frontend Development (Client Side) -> Focus on visual presentations, layouts and user interactivity using 
+	   	HTML5,CSS3,JS (React) UI
+	-> Backend Development (Server Side) ->  It focuses on core bussiness logic, user authentication, database
+		operations and APIs using Language such as Python,Java,Node,PHP
+
+(i) Full Stack Development:
+===========================
+It refers to the practice of working both on the frontend and backend of a web application. A FullStack Developer
+posses the skills required to design a complete web application from scratch -> managing responsive user interfaces 
+to managing server logic,writing database queries and deploying applications to production servers
+
+Client-Server Architecture
+===========================
+It is the fundamentals building block of modern web infrastructure
+
+                               HTTP Request (GET,POST)
+Client(Browser)  -----------------------------------------------------> Web Server
+HTML,CSS,JS		<----------- HTML/JSON (200)						   Flask Application
+User interface														   Business Logic/DB
+(Chrome,Safari,Edge) 												   (WSGI/ngnix/Gunicorn)
+																		Pythonanywhere, AWS
+
+Client -> Initialises requests for data or resources
+
+Server -> Waits for incoming requests, process the request (fetching the rows from database) and returns
+the required response back to the Client
+
+Internet /Intranet :
+====================
+Internet -> Global Interconnected network of billions of computers/Electronic devices. it relies on TCP/IP to 
+			route packages of data across physical cables, Fiber Optics, Wireless 
+
+Web Server -> Hardware/Software 
+Hardware -> physical computer / Virtual Computer connected to Internet
+
+Software -> A Server program such as (WSGI Servers like Gunicorn) that accepts incoming requests from client 
+browsers and get back with response
+
+HTTP  vs  HTTPS (Leverage SSL/TLS)
+
+Flask --> pip install flask
+
+Request Response Cycle
+
+Flask Advantages vs Disadvantages
+================================== 
+
+HTTP vs HTTPs
+=============
+HTTPs-->HTTPs is HTTP with Security through encryption
+
+HTTP(Unsecured) -->Not Encrypted Best Suited for Local offline demos
+-->Security risk is higher-->Data can be intercepted and exposed
+-->Default port :80
+
+HTTPs(Secured) -->Encrypted  via SSL and TSL
+-->Best Suited for all real public websites ,data is protected
+-->Default port:443
+
+
+Request Response Cycle -->Flask
+================================
+Step1: Browser(User Initialise the action)
+
+Step2: HTTP Request(Data sent to server)
+
+Step3: Flask Route('/')(matches the url path)
+
+Step4: Python Functions(Triggers mapped code)
+
+Step5: Bussiness Logic (Process the Request)
+
+Step6: HTTP Response (Formulate the answer back)
+
+Step7: Browser(Render the Webpage)
+
+
+Flask-->Micro Wed Framework
+-------------------------------
+-->Essential core functions and ake developers free to choose
+   their own database,authentication and libaries
+-->Creates Web Applications
+--> Maps URLs dynamically to Python Functions
+-->Flexible Outputs --->can return text,HTML,JSON APIs,files 
+-->LightWeigth design -->Small to Medium apps
+
+Ex:
+
+from flask import Flask
+app=Flask(__name__)
+#@app.route() -->Decorator
+@app.route('/about')    #about -->request URL
+def home():   #function
+    return "PFS-VSP-004 Students are good"
+
+if __name__=="__main__":
+      app.run()     #Local development server
+
+
+**Trailing Slash Rules --> @app.route("/about/")
+                     -->it will make both urls accessible/about will automatically
+                       redirect to /about/
+
+**Slash at end =Director ==Redirect
+-->If we don't mention as above trailing slash only we have given 
+  @app.route('/about')  -->No Slash=Exact
+
+**Flask-->2010
+       -->Amin Ronacher
+       -->April Fool's joke
+       -->pocco
+
+**Features
+-->Built-in development
+-->WSGI(Web Service Gateway Interface)
+-->JINJA2 Tempaltes
+-->Restful Request
+-->Integrated Unit Testing
+
+
+
+
+
+
+
+
+
+
+
+
+
